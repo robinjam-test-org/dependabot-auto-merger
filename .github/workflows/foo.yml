@@ -1,0 +1,12 @@
+on:
+  repository_dispatch:
+    inputs:
+      foo: 
+        description: "Test parameter"
+        required: true
+        type: string
+jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{ inputs.foo }}

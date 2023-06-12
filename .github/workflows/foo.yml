@@ -1,12 +1,8 @@
 on:
-  repository_dispatch:
-    inputs:
-      foo: 
-        description: "Test parameter"
-        required: true
-        type: string
+  workflow_call:
+  workflow_dispatch:
 jobs:
   foo:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ inputs.foo }}
+    - run: echo ${{ secrets.FOO }}
